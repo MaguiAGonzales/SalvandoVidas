@@ -17,14 +17,13 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-  <script type="text/javascript" src="../Dre-Presentacion/plugins/vue.js"></script>
 </head>
 
 <body class="hold-transition skin-blue-light sidebar-mini">
   <div class="wrapper">
   <header class="main-header">
     <!-- Logo -->
-    <a href="../SV-Logica/UsuarioAdmin.php" class="logo">
+    <a href="../SV-Logica/Usuario.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b><b>V</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -62,25 +61,39 @@
 
           <li>
               <a href="../SV-Logica/Mascota.php">
-                <i class="glyphicon glyphicon-piggy-bank"></i><span>MIS MASCOTAS</span>
+                <i class="fa fa-paw"></i><span>MIS MASCOTAS</span>
               </a>
           </li>
 
           <li>
-            <a href="../SV-Logica/Adopciones.php">
+            <a href="../SV-Logica/Adopcion.php">
               <i class="glyphicon glyphicon-heart"></i><span>ADOPCIONES</span>
             </a>
           </li>
 
           <li>
-            <a href="../SV-Logica/Notificaciones.php">
-              <i class="glyphicon glyphicon-bullhorn"></i><span>NOTIFICACIONES</span>
+            <a href="../SV-Logica/VisitasMensuales.php">
+              <i class="fa fa-group"></i><span>VISITAS MENSUALES</span>
             </a>
+          </li>
+
+          <li class="active treeview menu-open">
+            <a href="#">
+              <i class="glyphicon glyphicon-bullhorn"></i> <span>NOTIFICACIONES</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu" style="">
+              <li class="active"><a href="../SV-Logica/Denuncias.php"><i class="fa fa-circle-o"></i>Denuncias</a></li>
+              <li class="active"><a href="../SV-Logica/Extraviados.php"><i class="fa fa-circle-o"></i>Extraviados</a></li>
+              <li class="active"><a href="../SV-Logica/Encontrados.php"><i class="fa fa-circle-o"></i>Encontrados</a></li>
+            </ul>
           </li>
 
           <li>
             <a href="../SV-Logica/Eventos.php">
-              <i class="glyphicon glyphicon-calendar"></i><span>EVENTOS</span>
+              <i class="fa fa-calendar"></i><span>EVENTOS</span>
             </a>
           </li>
 

@@ -4,20 +4,22 @@
 	$sub_query = '';
 	$query = "";
 
-	$query = "SELECT * FROM usuarioweb ORDER BY dni ASC";
+	$query = "SELECT * FROM evento ORDER BY id_evento ASC";
+
+	
 
 	 if(isset($_POST["buscar"])){
 
 	 	$descripcion = $_POST["filtroDescripcion"];
 
-	 	$query = "SELECT * FROM usuarioweb where (CONCAT(nombres,' ',apellidos) LIKE '%$descripcion%' OR dni = '$descripcion') ORDER BY id ASC ";
+	 	$query = "SELECT * FROM evento where (titulo LIKE '%$descripcion%' or descripcion = '$descripcion') ORDER BY id_evento ASC";
 
 	}
 
 	$consul = $conexion->query($query) ;
 ?>
-
-<div class="col-md-12">
+<div style="padding: 15px">
+ <div class="col-md-12">
     <div class="box box-info">
     	<div class="box-body">
             <input type="hidden" name="buscar" value="buscar">
@@ -27,8 +29,10 @@
 					    <thead>
 					      <tr>
 					        <th>Código</th>
-					        <th>Dni</th>
-					        <th>Nombres Completos</th>
+					        <th>Título</th>
+					        <th>Fecha</th>
+					        <th>Hora</th>
+					        <th>Lugar</th>
 					        <th>Opciones</th>
 					      </tr>
 					    </thead> 
@@ -37,19 +41,21 @@
 						while ($registro = $consul->fetch_assoc()) {
 						?>
 						<tr>
-							<td><?= $registro['id'] ?></td>
-							<td><?= $registro['dni'] ?></td>
-							<td><?= $registro['nombres']?> <?= $registro['apellidos']?></td>
+							<td><?= $registro['id_evento'] ?></td>
+							<td><?= $registro['titulo'] ?></td>
+							<td><?= $registro['fecha'] ?></td>
+							<td><?= $registro['hora'] ?></td>
+							<td><?= $registro['lugar'] ?></td>
 							<td>
 								
 								<button href="" class="btn btn-info btn-sm"
-								 onclick="modalDetailsUsu(<?= $registro['id'] ?>)"> <i class="fa fa-file-text-o"></i></button>
+								 onclick="modalDetailsEven(<?= $registro['id_evento'] ?>)"> <i class="fa fa-file-text-o"></i></button>
 								
 								<button href="" class="btn btn-warning btn-sm"
-								 onclick="modalEditUsu(<?= $registro['id'] ?>)"> <i class="fa fa-edit"></i></button>
+								 onclick="modalEditEven(<?= $registro['id_evento'] ?>)"> <i class="fa fa-edit"></i></button>
 									
 								 <button href="" class="btn btn-danger btn-sm"
-								 onclick="EliminarUsu(<?= $registro['id'] ?>)"> <i class="fa fa-remove"></i></button>
+								 onclick="EliminarEven(<?= $registro['id_evento'] ?>)"> <i class="fa fa-remove"></i></button>
 												
 							</td>
 						</tr>
@@ -67,8 +73,13 @@
         
   	</div>
 </div>
+</div>
 
 <div class="col-sm-12">
 	
 	
 </div>
+
+
+
+

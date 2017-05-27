@@ -3,7 +3,10 @@ function modalNewUsu() {
     $('#modalNew').modal('show');
     $('#titulo_lt').text("Crear");
 
-    $("#dni").val('');
+    $("#id").val('');
+  	$("#id").attr('readonly',false);
+
+  	$("#dni").val('');
   	$("#dni").attr('readonly',false);
 
   	$("#nombres").val('');
@@ -31,6 +34,9 @@ function modalDetailsUsu(id){
 
 		var result = jQuery.parseJSON(data);
 
+	  	$("#id").val(result.id);
+  		$("#id").attr('readonly',false);
+
 	  	$("#dni").val(result.dni);
 	  	$("#dni").attr('readonly',true);
 
@@ -57,6 +63,7 @@ function modalEditUsu(id) {
 
 	$('#editar').show();
     $('#enviar').hide();
+    
     $('#oli_contrasenia').show();
 
 	var url = "getUsuarioById.php";
@@ -65,6 +72,9 @@ function modalEditUsu(id) {
 		.done(function( data ) {
 
 		var result = jQuery.parseJSON(data);
+
+	  	$("#id").val(result.id);
+  		$("#id").attr('readonly',false);
 
 	  	$("#dni").val(result.dni);
 	  	$("#dni").attr('readonly',true);

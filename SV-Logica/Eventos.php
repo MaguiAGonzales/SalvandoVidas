@@ -13,7 +13,7 @@ if (!isset($_SESSION["administrador"])){
     <!-- Filtro  -->
 
     <div class="row"> 
-      <?php include 'LBuscarMascota.php'; ?> 
+      <?php include 'LBuscarEvento.php'; ?> 
     </div>
 
     <!-- ./  filtro -->
@@ -21,7 +21,7 @@ if (!isset($_SESSION["administrador"])){
     <!-- tabla   -->
 
     <div class="row" >
-      <?php  include('LMostrarMascota.php'); ?>
+      <?php  include('LMostrarEvento.php'); ?>
     </div>
 
     <!-- ./  tabla -->
@@ -33,7 +33,7 @@ if (!isset($_SESSION["administrador"])){
 
 
   <?php
-    $script_module='modMascota.js';
+    $script_module='modEvento.js';
    ?>
 
 <?php include('../Sv-Presentacion/template_footer.php') ?>

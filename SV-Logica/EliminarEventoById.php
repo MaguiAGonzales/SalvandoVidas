@@ -4,7 +4,7 @@
  
 	include('conexion.php');
 
-	$query = "DELETE FROM usuarioweb where id= $id";
+	$query = "DELETE FROM evento where id_evento = $id";
 
 	$consul = $conexion->query($query);
 

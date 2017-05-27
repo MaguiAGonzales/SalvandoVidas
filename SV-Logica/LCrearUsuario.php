@@ -6,6 +6,8 @@
         <form class="form-horizontal" id="agregar_usuario" name="agregar_frm"  method="post" enctype="multipart/form-data">
             <div class="box-body">
 
+            <input id="id" name="id" type="hidden" >
+
             <div class="col-md-12">
             	<div class="form-group">
                 	<label for="dni" class="col-sm-4 control-label">Dni</label>
@@ -31,7 +33,7 @@
                 <div class="form-group" id="oli_contrasenia">
                     <label for="contrasenia" class="col-sm-4 control-label">Contraseña</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="contrasenia" name="contrasenia">
+                        <input type="contrasenia" class="form-control" id="contrasenia" name="contrasenia">
                     </div>
                 </div>
             </div>
@@ -70,11 +72,12 @@
 
     if(isset($_REQUEST["editar_sb"])){
 
+    $id=$_POST["id"];
     $contrasenia=$_POST["contrasenia"];
 
     include ("conexion.php");
     
-    $consulta="UPDATE usuarioweb SET contrasenia = '$contrasenia' where dni = '$dni'";
+    $consulta="UPDATE usuarioweb SET contrasenia = '$contrasenia' where id = '$id'";
 
     $ejecutar_consulta=$conexion->query($consulta);
     

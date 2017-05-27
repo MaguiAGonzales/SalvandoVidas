@@ -24,7 +24,10 @@
                 
                 <div class="col-md-12">
                     <div class="box-title" align="center" >
-                        <h5 class="box-title"><b>Foto</b></h3>
+                        <h5 class="box-title"><b>Foto</b></h5>
+                        <br>
+                        <input type="file" name="imagen">
+                        </br>
                     </div>
                 </div>               
 

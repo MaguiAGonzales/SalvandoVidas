@@ -3,7 +3,7 @@ $id = $_POST['id'];
  
 include('conexion.php');
 
-	$query = "SELECT * FROM usuarioweb where id = $id";
+	$query = "SELECT * FROM evento where id_evento = $id";
 
 	$consul = $conexion->query($query) ;
 
